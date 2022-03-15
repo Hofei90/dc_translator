@@ -1,0 +1,5 @@
+dc_token = "<discordtoken>"
+deepl_api_key = "<deepl_api_token>"
+deepl_url = "deepl_api_url"
+
+debug = false
