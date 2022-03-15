@@ -14,6 +14,34 @@ client = discord.Client()
 
 
 def set_target_language(emoji):
+    """
+    https://www.deepl.com/de/docs-api/translating-text/request/
+    "BG" - Bulgarian - 🇧🇬
+    "CS" - Czech - 🇨🇿
+    "DA" - Danish - 🇩🇰
+    "DE" - German - 🇩🇪
+    "EL" - Greek - 🇬🇷
+    "EN" - English - 🇬🇧 - 🇺🇲
+    "ES" - Spanish - 🇪🇸
+    "ET" - Estonian - 🇪🇪
+    "FI" - Finnish - 🇫🇮
+    "FR" - French - 🇫🇷
+    "HU" - Hungarian - 🇭🇺
+    "IT" - Italian - 🇮🇹
+    "JA" - Japanese - 🇯🇵
+    "LT" - Lithuanian - 🇱🇹
+    "LV" - Latvian - 🇱🇻
+    "NL" - Dutch - 🇳🇱
+    "PL" - Polish - 🇵🇱
+    "PT" - Portuguese - 🇵🇹
+    "RO" - Romanian - 🇷🇴
+    "RU" - Russian - 🇷🇺
+    "SK" - Slovak - 🇸🇰
+    "SL" - Slovenian - 🇸🇮
+    "SV" - Swedish - 🇸🇪
+    "ZH" - Chinese - 🇨🇳
+    """
+
     if emoji == "🇬🇧":  # UK-Englisch
         target_language = "en-GB"
     elif emoji == "🇺🇲":  # US-Englisch
