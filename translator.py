@@ -15,16 +15,18 @@ client = discord.Client()
 
 def set_target_language(emoji):
     if emoji == "🇬🇧":  # UK-Englisch
-        target_anguage = "en-GB"
+        target_language = "en-GB"
     elif emoji == "🇺🇲":  # US-Englisch
-        target_anguage = "en-US"
+        target_language = "en-US"
     elif emoji == "🇩🇪":  # Deutsch
-        target_anguage = "de"
+        target_language = "de"
     elif emoji == "🇷🇺":  # Russisch
-        target_anguage = "ru"
+        target_language = "ru"
+    elif emoji == "🇵🇱":  # Polnisch
+        target_language = "pl"
     else:
         return
-    return target_anguage
+    return target_language
 
 
 @client.event
