@@ -1,0 +1,13 @@
+# Pfad zum speichern: /etc/systemd/system/dc_translator.service
+[Unit]
+Description=Service Unit zum Starten des Discord Übersetzungsbots
+After=network.target
+
+[Service]
+Type=simple
+ExecStart=/usr/bin/python3 /home/pi/dc_translator/translator.py
+User=pi
+
+
+[Install]
+WantedBy=multi-user.target
