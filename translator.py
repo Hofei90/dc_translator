@@ -1,9 +1,9 @@
-import json
 import pathlib
 
+import deepl
 import discord
-import requests
 import toml
+
 
 SKRIPTPFAD = pathlib.Path(__file__).parent
 CONFIGPFAD = SKRIPTPFAD / "config.toml"
@@ -11,6 +11,7 @@ CONFIG = toml.load(CONFIGPFAD)
 DEBUG = CONFIG["debug"]
 
 client = discord.Client()
+translator = deepl.Translator(CONFIG["deepl_api_key"])
 
 
 def set_target_language(emoji):
@@ -82,18 +83,12 @@ async def on_reaction_add(reaction, _):  # (reation, user)
         # Kein Emoji welches eine übersetzbare Länderflagge ist gewählt
         return
 
-    data = {
-        "auth_key": CONFIG["deepl_api_key"],
-        "text": reaction.message.content,
-        "target_lang": target_language
-    }
-    r = requests.post(CONFIG["deepl_url"], data)
+    result = translator.translate_text(reaction.message.content, target_lang=target_language)
 
     if DEBUG:
-        print(r)
-        print(r.text)
+        print(result)
 
-    await reaction.message.reply(json.loads(r.text)["translations"][0]["text"])
+    await reaction.message.reply(result.text)
 
 
 client.run(CONFIG["dc_token"])
