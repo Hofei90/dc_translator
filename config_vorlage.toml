@@ -1,5 +1,5 @@
 dc_token = "<discordtoken>"
 deepl_api_key = "<deepl_api_token>"
-deepl_url = "deepl_api_url"
+deepl_url = "https://api-free.deepl.com/v2/translate"
 
 debug = false
