@@ -43,5 +43,3 @@ sudo mv dc_translator.service /etc/systemd/system/dc_translator.service
 sudo systemctl start dc_translator.service
 sudo systemctl enable dc_translator.service
 ```
-
-Als Erweiterung ist geplant, Logging und das Pythonmodul deepl noch in das Skript einzubauen.

@@ -2,3 +2,19 @@ dc_token = "<discordtoken>"
 deepl_api_key = "<deepl_api_token>"
 
 debug = false
+welcome_message = false
+
+welcome_message_text = """
+Willkommen auf dem IDIC Server.
+Bitte verwenden auf dem Server denselben Namen wie im Spiel.
+Weitere Rechte und somit Channelzugriffe werden in Kürze zugewiesen.
+Auf unserem Discordserver können Nachrichten automatisch übersetzt werden, indem als Reaktion die entsprechende
+Länderflagge ausgewählt wird.
+Zur Verfügung stehen folgende Sprachen:
+Welcome to the IDIC server.
+Please use the same name on the server as in the game.
+Further rights and thus channel accesses will be assigned shortly.
+On our discord server, messages can be translated automatically by selecting the appropriate country flag as a response.
+country flag is selected as a response.
+The following languages are available:
+🇧🇬 🇨🇿 🇩🇰 🇩🇪 🇬🇧 🇺🇲 🇪🇸 🇪🇪 🇫🇮 🇫🇷 🇭🇺 🇮🇹 🇯🇵 🇱🇹 🇱🇻 🇳🇱 🇵🇱 🇵🇹 🇷🇴 🇷🇺 🇸🇰 🇸🇮 🇸🇪 🇨🇳"""

@@ -10,8 +10,28 @@ CONFIGPFAD = SKRIPTPFAD / "config.toml"
 CONFIG = toml.load(CONFIGPFAD)
 DEBUG = CONFIG["debug"]
 
-client = discord.Client()
+WORK_CHANNEL_NAME = "anmeldung"
+
+
+if CONFIG["welcome_message"]:
+    intents = discord.Intents.default()
+    intents.members = True
+    client = discord.Client(intents=intents)
+else:
+    client = discord.Client()
+
+
 translator = deepl.Translator(CONFIG["deepl_api_key"])
+
+
+def search_work_channel(work_channel_name):
+    channels = client.get_all_channels()
+    work_channel = None
+    for channel in channels:
+        if str(channel) == work_channel_name:
+            work_channel = client.get_channel(channel.id)
+            break
+    return work_channel
 
 
 def set_target_language(emoji):
@@ -89,6 +109,14 @@ async def on_reaction_add(reaction, _):  # (reation, user)
         print(result)
 
     await reaction.message.reply(result.text)
+
+
+if CONFIG["welcome_message"]:
+    @client.event
+    async def on_member_join(member):
+        work_channel = search_work_channel(WORK_CHANNEL_NAME)
+        if work_channel is not None:
+            await work_channel.send(f"{CONFIG['welcome_message_text']}")
 
 
 client.run(CONFIG["dc_token"])
