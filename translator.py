@@ -48,6 +48,8 @@ def set_target_language(emoji):
         target_language = "da"  # dänisch
     elif emoji == "🇩🇪":
         target_language = "de"  # deutsch
+    elif emoji == "🇬🇷":  # griechisch
+        target_language = "el"
     elif emoji == "🇬🇧":
         target_language = "en-GB"  # uk-englisch
     elif emoji == "🇺🇲":
@@ -62,14 +64,20 @@ def set_target_language(emoji):
         target_language = "fr"  # französisch
     elif emoji == "🇭🇺":
         target_language = "hu"  # ungarisch
+    elif emoji == "🇮🇩":  # indonesisch
+        target_language = "id"
     elif emoji == "🇮🇹":
         target_language = "it"  # italienisch
     elif emoji == "🇯🇵":
         target_language = "ja"  # japanisch
+    elif emoji == "🇰🇷":  # koreanisch
+        target_language = "ko"
     elif emoji == "🇱🇹":
         target_language = "lt"  # litaunisch
     elif emoji == "🇱🇻":
         target_language = "lv"  # lettisch
+    elif emoji == "🇳🇴":  # norwegisch
+        target_language = "nb"
     elif emoji == "🇳🇱":
         target_language = "nl"  # niederländisch
     elif emoji == "🇵🇱":
@@ -86,6 +94,10 @@ def set_target_language(emoji):
         target_language = "sl"  # slovenisch
     elif emoji == "🇸🇪":
         target_language = "sv"  # schwedisch
+    elif emoji == "🇹🇷":  # türkisch
+        target_language = "tr"
+    elif emoji == "🇺🇦":  # ukrainisch
+        target_language = "uk"
     elif emoji == "🇨🇳":
         target_language = "zh"  # chinesisch
     else:
