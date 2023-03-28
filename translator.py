@@ -34,6 +34,10 @@ def search_work_channel(work_channel_name):
     return work_channel
 
 
+def replace_notification_char(text):
+    return text.replace("@", "@'")
+
+
 def set_target_language(emoji):
     """
     Liste verfügbarer Sprachen
@@ -120,7 +124,8 @@ async def on_reaction_add(reaction, _):  # (reation, user)
     if DEBUG:
         print(result)
 
-    await reaction.message.reply(result.text)
+    text_without_notification = replace_notification_char(result.text)
+    await reaction.message.reply(text_without_notification)
 
 
 if CONFIG["welcome_message"]:
