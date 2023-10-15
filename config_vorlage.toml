@@ -6,7 +6,7 @@ welcome_message = false
 
 welcome_message_text = """
 Willkommen auf dem IDIC Server.
-Bitte verwenden auf dem Server denselben Namen wie im Spiel.
+Bitte verwende auf dem Server denselben Namen wie im Spiel.
 Weitere Rechte und somit Channelzugriffe werden in Kürze zugewiesen.
 Auf unserem Discordserver können Nachrichten automatisch übersetzt werden, indem als Reaktion die entsprechende
 Länderflagge ausgewählt wird.
