@@ -35,7 +35,7 @@ def search_work_channel(work_channel_name):
 
 
 def replace_notification_char(text):
-    return text.replace("@", "@ ")
+    return text.replace("@", "")
 
 
 def set_target_language(emoji):
