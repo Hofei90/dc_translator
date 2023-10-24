@@ -40,7 +40,7 @@ def replace_notification_char(text):
 
 def set_target_language(emoji):
     """
-    Liste verfügbarer Sprachen
+    List of available languages
     https://www.deepl.com/de/docs-api/translating-text/request/
     """
 
@@ -110,22 +110,24 @@ def set_target_language(emoji):
 
 
 @client.event
-async def on_reaction_add(reaction, _):  # (reation, user)
+async def on_raw_reaction_add(raw_reaction_action_event):
     if DEBUG:
-        print(reaction.emoji)
+        print(raw_reaction_action_event.emoji)
 
-    target_language = set_target_language(str(reaction.emoji))
+    channel = client.get_channel(raw_reaction_action_event.channel_id)
+    message = await channel.fetch_message(raw_reaction_action_event.message_id)
+    target_language = set_target_language(str(raw_reaction_action_event.emoji))
     if target_language is None:
-        # Kein Emoji welches eine übersetzbare Länderflagge ist gewählt
+        # No emoji which is a translatable country flag chosen
         return
 
-    result = translator.translate_text(reaction.message.content, target_lang=target_language)
+    result = translator.translate_text(message.content, target_lang=target_language)
 
     if DEBUG:
         print(result)
 
     text_without_notification = replace_notification_char(result.text)
-    await reaction.message.reply(text_without_notification)
+    await message.reply(text_without_notification)
 
 
 if CONFIG["welcome_message"]:
