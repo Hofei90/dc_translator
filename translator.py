@@ -32,7 +32,7 @@ def set_target_language(emoji):
         target_language = "en-GB"  # uk-englisch
     elif emoji == "🇺🇲":
         target_language = "en-US"  # us-englisch
-    elif emoji == "🇪🇸":
+    elif emoji == "🇪🇸" or emoji == "🇪🇦":
         target_language = "es"  # spanisch
     elif emoji == "🇪🇪":
         target_language = "et"  # estnisch
